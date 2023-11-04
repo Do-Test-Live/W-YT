@@ -1,0 +1,20 @@
+ErrorDocument 404 https://yt.com/404.php
+
+RewriteEngine on
+
+RewriteRule ^Dashboard index.php [NE,L]
+
+RewriteRule ^Login login.php [NE,L]
+
+RewriteRule ^Logout logout.php [NE,L]
+
+RewriteRule ^Add-Category add_category.php [NE,L]
+
+RewriteRule ^Insert insert.php [NE,L]
+
+RewriteRule ^Delete delete.php [NE,L]
+
+RewriteRule ^Update update.php [NE,L]
+
+RewriteRule ^View_Category view_category.php [NE,L]
+
