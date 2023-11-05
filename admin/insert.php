@@ -75,7 +75,7 @@ if(isset($_POST['add_industry'])){
 
 
 /*add company*/
-if(isset($_POST['update_company'])){
+if(isset($_POST['add_company'])){
     $cat_id = $db->checkValue($_POST['cat_id']);
     $sub_cat = $db->checkValue($_POST['sub_cat']);
     $industry_type = $db->checkValue($_POST['industry_type']);

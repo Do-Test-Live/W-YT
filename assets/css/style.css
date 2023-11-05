@@ -53,7 +53,7 @@ Version      : 1.2.1
   --black-200: #bcbcbd;
   --black-300: #a6a6a7;
   --black-350: #9199a1;
-  --black-400: #909092;
+  --black-400: #000000;
   --black-500: #797a7c;
   --black-600: #636466;
   --black-700: #4d4d50;
@@ -3701,7 +3701,7 @@ input::-webkit-inner-spin-button {
 
 .footer-area {
   overflow: hidden;
-  background-color: #202124;
+  background-color: #a8cd1b;
 }
 .footer-area .footer-content-top {
   justify-content: space-between;
@@ -3734,7 +3734,6 @@ input::-webkit-inner-spin-button {
 .footer-area .right-content .footer-search .email-form {
   padding: 19px 19px 19px 20px;
   color: var(--white);
-  background-color: rgba(255, 255, 255, 0.1019607843);
   border: 1px solid var(--black-50);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -8562,7 +8561,7 @@ blockquote .author {
   /*----------------------------------------*/
 .job-post-widget .single-job-post {
   background-color: var(--bs-white);
-  padding: 40px;
+  padding: 15px;
   border-radius: 10px;
   transition: all 0.3s ease-out;
   box-shadow: 0px 4px 15px -2px rgba(0, 0, 0, 0.0509803922);
@@ -8712,7 +8711,7 @@ blockquote .author {
 }
 
 .job-title {
-  font-size: 18px;
+  font-size: 24px;
   color: var(--black-900);
   font-family: var(--body-font-family);
   font-weight: 600;
@@ -8723,15 +8722,16 @@ blockquote .author {
 }
 
 .job-location {
-  font-size: 14px;
+  font-size: 18px;
   color: #787880;
   font-family: var(--body-font-family);
   font-weight: 400;
+  margin-right: 5rem;
 }
 .job-location i {
   display: inline-block;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 24px;
   color: #787880;
   margin-right: 5px;
 }

@@ -1,3 +1,8 @@
+<?php
+include('admin/include/DBController.php');
+$db = new DBController();
+?>
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 
@@ -18,6 +23,17 @@
     <link rel="stylesheet" href="assets/css/animate.css"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
     <link rel="stylesheet" href="assets/css/responsive.css"/>
+    <style>
+        .horizontal-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .horizontal-list li {
+            display: inline-block; /* Display items side by side */
+            margin-right: 10%; /* Add some spacing between items */
+        }
+    </style>
 </head>
 
 <body>
@@ -36,59 +52,10 @@
 <header class="header-area">
     <nav class="navbar navbar-expand-lg header-menu">
         <div class="container">
-            <a class="navbar-brand sticky_logo" href="index.html">
+            <a class="navbar-brand sticky_logo" href="index.php">
                 <img class="main" src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" alt="logo">
                 <img class="sticky" src="assets/img/logo-black.png" srcset="assets/img/logo-black@2x.png 2x" alt="logo">
             </a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-          <span class="menu_toggle">
-            <span class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-            <span class="hamburger-cross">
-              <span></span>
-              <span></span>
-            </span>
-          </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown submenu mega_menu tab-demo">
-                        <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
-                           aria-haspopup="true"
-                           aria-expanded="false">About Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button">
-                            Latest News
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button">
-                            Our Clients
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button">
-                            Contacts
-                        </a>
-                    </li>
-                </ul>
-                <div class="d-flex right-nav">
-                    <a class="btn btn-signin" href="#"><i class="lar la-user-circle"></i> Sign in</a>
-                    <a class="btn btn-brand" href="#"><i class="las la-plus"></i> Add Listing</a>
-                </div>
-            </div>
         </div>
     </nav>
 </header>
@@ -100,14 +67,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-xxl-8 col-lg-10 mx-auto text-center">
-                    <h1 class="banner-title wow fadeInUp">What to search for </h1>
+                    <h1 class="banner-title wow fadeInUp">要搜索什麼</h1>
                     <div class="listing-search-form mt-50 wow fadeInUp" data-wow-delay="0.5s">
                         <form action="#" class="d-flex text-center wrapper-form">
                             <div class="input-group">
-                                <input type="text" class="form-control geoLocationInp" placeholder="Company, category, phone number..."/>
+                                <input type="text" class="form-control geoLocationInp" placeholder="組織名稱"/>
                                 <span class="input-group-text"></span>
                             </div>
-                            <button class="btn" type="submit">Search</button>
+                            <button class="btn" type="submit"><i class="las la-search"></i></button>
                         </form>
                     </div>
                 </div>
@@ -120,50 +87,20 @@
     <!-- Categoris Area -->
     <section class="pt-5 pb-5">
         <div class="container">
-                            <div class="row">
-                                <div class="col-xl-3">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="las la-caret-right"></i> Flats</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="las la-caret-right"></i> Garages and
-                                                Parking lots</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-xl-3">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="las la-caret-right"></i> Houses</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="las la-caret-right"></i> Staff quarters</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-xl-3">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="las la-caret-right"></i> Offices and
-                                                Premises</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="las la-caret-right"></i> Stanions and
-                                                Rooms</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-xl-3">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="las la-caret-right"></i> Garden
-                                                <span>in the Home and Garden</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="las la-caret-right"></i> Other real
-                                                estate</a>
-                                        </li>
+                            <div class="row text-center">
+                                <div class="col-xl-12">
+                                    <ul class="horizontal-list">
+                                        <?php
+                                        $fetch_cat = $db->runQuery("select * from category order by category_id desc");
+                                        $no_fetch_cat = $db->numRows("select * from category order by category_id desc");
+                                        for($i=0; $i < $no_fetch_cat; $i++){
+                                            ?>
+                                            <li>
+                                                <a href="category_details.php?cat=<?php echo $fetch_cat[$i]['category_id'];?>"><i class="las la-caret-right"></i><?php echo $fetch_cat[$i]['category_name'];?></a>
+                                            </li>
+                                            <?php
+                                        }
+                                        ?>
                                     </ul>
                                 </div>
                             </div>
@@ -349,20 +286,13 @@
 </main>
 
 <!-- Footer Area -->
-<section class="footer-area pt-130 pb-100">
+<section class="footer-area pt-130 pb-10">
     <div class="container">
         <div class="footer-content-top pb-70">
             <a class="wow fadeInRight" href="index.html"><img src="assets/img/logo.png" alt="Logo"/></a>
             <div class="d-flex flex-wrap justify-content-xl-between justify-content-center wow fadeInRight"
                  data-wow-delay="0.3s">
-                <div class="d-flex footer-sub-menu my-xl-0 my-4">
-                    <a href="#" class="mr-20">Home</a>
-                    <a href="#" class="mr-20">About Us</a>
-                    <a href="#" class="mr-20">Latest News</a>
-                    <a href="#" class="mr-20">Our Clients</a>
-                    <a href="#" class="mr-20">Contacts</a>
-                </div>
-                <div class="right-content">
+                <div class="right-content mt-3">
                     <div class="footer-search-form wow fadeInLeft">
                         <p class="Subscribe-title mb-20">Quick Support</p>
                         <form action="#">
