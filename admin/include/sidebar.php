@@ -22,8 +22,8 @@
                     <span class="nav-text">Sub-Category</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="#">Add</a></li>
-                    <li><a href="#">View</a></li>
+                    <li><a href="Add_SubCategory">Add</a></li>
+                    <li><a href="View_SubCategory">View</a></li>
                 </ul>
             </li>
             <li>
@@ -32,7 +32,7 @@
                     <span class="nav-text">Industry Type</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="#">Add</a></li>
+                    <li><a href="Add_Industry">Add</a></li>
                     <li><a href="#">View</a></li>
                 </ul>
             </li>

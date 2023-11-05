@@ -18,3 +18,9 @@ RewriteRule ^Update update.php [NE,L]
 
 RewriteRule ^View_Category view_category.php [NE,L]
 
+RewriteRule ^Add_SubCategory add_sub_cat.php [NE,L]
+
+RewriteRule ^View_SubCategory view_sub_cat.php [NE,L]
+
+RewriteRule ^Add_Industry add_industry.php [NE,L]
+

@@ -30,3 +30,21 @@ if(isset($_GET['categoryId'])){
     }
 
 }
+
+
+/*delete sub-category*/
+if(isset($_GET['sub_category_id'])){
+    $id = $_GET['sub_category_id'];
+    $delete_sub_cat = $db->insertQuery("DELETE FROM `sub_category` WHERE sub_cat_id = '$id'");
+    if($delete_sub_cat){
+        echo "<script>
+                document.cookie = 'alert = 3;';
+                window.location.href='View_SubCategory';
+                </script>";
+    }else{
+        echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='View_SubCategory';
+                </script>";
+    }
+}

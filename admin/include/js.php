@@ -8,9 +8,6 @@
 <!-- Chart piety plugin files -->
 <script src="vendor/peity/jquery.peity.min.js"></script>
 
-<!-- Apex Chart -->
-<script src="vendor/apexchart/apexchart.js"></script>
-
 <!-- Dashboard 1 -->
 <script src="js/dashboard/dashboard-1.js"></script>
 
