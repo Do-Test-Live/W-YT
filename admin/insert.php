@@ -72,3 +72,30 @@ if(isset($_POST['add_industry'])){
                 </script>";
     }
 }
+
+
+/*add company*/
+if(isset($_POST['update_company'])){
+    $cat_id = $db->checkValue($_POST['cat_id']);
+    $sub_cat = $db->checkValue($_POST['sub_cat']);
+    $industry_type = $db->checkValue($_POST['industry_type']);
+    $company_name = $db->checkValue($_POST['company_name']);
+    $phone = $db->checkValue($_POST['phone']);
+    $fax = $db->checkValue($_POST['fax']);
+    $website = $db->checkValue($_POST['website']);
+    $address = $db->checkValue($_POST['address']);
+    $inserted_at = date("Y-m-d H:i:s");
+
+    $insert = $db->insertQuery("INSERT INTO `company`(`cat_id`, `sub_cat_id`, `industry_type_id`, `company_name`, `phone`, `fax`, `website`, `location`, `inserted_at`) VALUES ('$cat_id','$sub_cat','$industry_type','$company_name','$phone','$fax','$website','$address','$inserted_at')");
+    if($insert){
+        echo "<script>
+                document.cookie = 'alert = 3;';
+                window.location.href='Add_Company';
+                </script>";
+    }else{
+        echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='Add_Company';
+                </script>";
+    }
+}

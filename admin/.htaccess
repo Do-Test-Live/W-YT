@@ -24,3 +24,11 @@ RewriteRule ^View_SubCategory view_sub_cat.php [NE,L]
 
 RewriteRule ^Add_Industry add_industry.php [NE,L]
 
+RewriteRule ^View_Industry view_industry.php [NE,L]
+
+RewriteRule ^Add_Company add_company.php [NE,L]
+
+RewriteRule ^View_Company view_company.php [NE,L]
+
+RewriteRule ^Profile profile.php [NE,L]
+

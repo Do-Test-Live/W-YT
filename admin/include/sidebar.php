@@ -33,7 +33,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="Add_Industry">Add</a></li>
-                    <li><a href="#">View</a></li>
+                    <li><a href="View_Industry">View</a></li>
                 </ul>
             </li>
             <li>
@@ -42,8 +42,8 @@
                     <span class="nav-text">Company Details</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="#">Add</a></li>
-                    <li><a href="#">View</a></li>
+                    <li><a href="Add_Company">Add</a></li>
+                    <li><a href="View_Company">View</a></li>
                 </ul>
             </li>
         </ul>
