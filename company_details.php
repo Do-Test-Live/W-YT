@@ -81,8 +81,8 @@ if(isset($_GET['industry'])){
                             </div>
                         </div>
                         <?php
-                        $fetch_company = $db->runQuery("select * from company where industry_type_id = '$industry' order by company_id desc");
-                        $no_fetch_company  = $db->numRows("select * from company where industry_type_id = '$industry' order by company_id desc");
+                        $fetch_company = $db->runQuery("select * from company where industry_type_id = '$industry' order by sequence asc");
+                        $no_fetch_company  = $db->numRows("select * from company where industry_type_id = '$industry' order by sequence asc");
                         for ($j=0; $j < $no_fetch_company; $j++){
                             ?>
                             <div class="single-job-post me-1 wow fadeInUp mt-25">

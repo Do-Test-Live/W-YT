@@ -122,8 +122,8 @@ if(isset($_GET['sub_cat'])){
 
                                     <ul class="catagory-list py-3 list-unstyled">
                                         <?php
-                                        $fetch_sub_cat = $db->runQuery("select * from sub_category where cat_id = '$cat_id' order by sub_cat_id desc");
-                                        $no_fetch_sub_cat = $db->numRows("select * from sub_category where cat_id = '$cat_id' order by sub_cat_id desc");
+                                        $fetch_sub_cat = $db->runQuery("select * from sub_category where cat_id = '$cat_id' order by sequence asc");
+                                        $no_fetch_sub_cat = $db->numRows("select * from sub_category where cat_id = '$cat_id' order by sequence asc");
                                         for ($i=0; $i < $no_fetch_sub_cat; $i++){
                                             ?>
                                             <li class="catagory-item ">
@@ -151,8 +151,8 @@ if(isset($_GET['sub_cat'])){
                             </div>
                         </div>
                         <?php
-                        $fetch_industry_type = $db->runQuery("select * from industry_type where sub_cat_id = '$sub_cat' order by industry_type_id desc");
-                        $no_fetch_industry_type = $db->numRows("select * from industry_type where sub_cat_id = '$sub_cat' order by industry_type_id desc");
+                        $fetch_industry_type = $db->runQuery("select * from industry_type where sub_cat_id = '$sub_cat' order by sequence asc");
+                        $no_fetch_industry_type = $db->numRows("select * from industry_type where sub_cat_id = '$sub_cat' order by sequence asc");
                         for ($j=0; $j < $no_fetch_industry_type; $j++){
                             ?>
                             <div class="single-job-post me-1 wow fadeInUp mt-25">

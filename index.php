@@ -91,8 +91,8 @@ $db = new DBController();
                                 <div class="col-xl-12">
                                     <ul class="horizontal-list">
                                         <?php
-                                        $fetch_cat = $db->runQuery("select * from category order by category_id desc");
-                                        $no_fetch_cat = $db->numRows("select * from category order by category_id desc");
+                                        $fetch_cat = $db->runQuery("select * from category order by sequence asc");
+                                        $no_fetch_cat = $db->numRows("select * from category order by sequence asc");
                                         for($i=0; $i < $no_fetch_cat; $i++){
                                             ?>
                                             <li>

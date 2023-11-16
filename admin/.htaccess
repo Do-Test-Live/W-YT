@@ -32,3 +32,11 @@ RewriteRule ^View_Company view_company.php [NE,L]
 
 RewriteRule ^Profile profile.php [NE,L]
 
+RewriteRule ^Sequence_Category sequence_category.php [NE,L]
+
+RewriteRule ^Sequence_SubCategory sequence_subcat.php [NE,L]
+
+RewriteRule ^Sequence_Industry sequence_industry.php [NE,L]
+
+RewriteRule ^Sequence_Company sequence_company.php [NE,L]
+

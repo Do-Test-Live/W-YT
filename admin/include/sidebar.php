@@ -14,6 +14,7 @@
                 <ul aria-expanded="false">
                     <li><a href="Add-Category">Add</a></li>
                     <li><a href="View_Category">View</a></li>
+                    <li><a href="Sequence_Category">Sequence</a></li>
                 </ul>
             </li>
             <li>
@@ -24,6 +25,7 @@
                 <ul aria-expanded="false">
                     <li><a href="Add_SubCategory">Add</a></li>
                     <li><a href="View_SubCategory">View</a></li>
+                    <li><a href="Sequence_SubCategory">Sequence</a></li>
                 </ul>
             </li>
             <li>
@@ -34,6 +36,7 @@
                 <ul aria-expanded="false">
                     <li><a href="Add_Industry">Add</a></li>
                     <li><a href="View_Industry">View</a></li>
+                    <li><a href="Sequence_Industry">Sequence</a></li>
                 </ul>
             </li>
             <li>
@@ -44,6 +47,7 @@
                 <ul aria-expanded="false">
                     <li><a href="Add_Company">Add</a></li>
                     <li><a href="View_Company">View</a></li>
+                    <li><a href="Sequence_Company">Sequence</a></li>
                 </ul>
             </li>
         </ul>
